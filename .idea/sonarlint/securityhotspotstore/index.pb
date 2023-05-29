@@ -6,7 +6,3 @@ S
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-P
- src/test/java/base/TestUtil.java,5\9\59d9ef061498841be504356267b8ae8810e418b8
-Q
-!src/test/java/pages/BasePage.java,b\a\bad33c200b069c9a74de9dfe76f946ebd1f102bf
