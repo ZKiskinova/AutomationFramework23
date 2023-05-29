@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.DocuWarePage;
 import pages.LoginPage;
 
-public class LoginTest extends TestUtil {
+public class ClickTask extends TestUtil {
 
     @Test
     public void successfulLogin() {
@@ -14,14 +14,5 @@ public class LoginTest extends TestUtil {
 
         DocuWarePage taskPage = new DocuWarePage(driver);
         taskPage.clickTask();
-
-
     }
-
-
-    }
-
-
-
-
-
+}
