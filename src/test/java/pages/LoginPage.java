@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class LoginPage extends BasePage {
 
@@ -33,7 +34,9 @@ public class LoginPage extends BasePage {
         PasswordInput.sendKeys(Password);
 
         loginBtn.click();
-        WebElement task = driver.findElement(By.id( );
+
+        WebElement productPageProducts = driver.findElement(By.id("header_container"));
+        Assert.assertTrue(productPageProducts.isDisplayed());
         return new ItemPage(driver);
         }
     }

@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class ItemPage extends BasePage{
 
-    @FindBy( id="shopping_cart_container");
-    private WebElement shoppingCart;
+    @FindBy(id="header_container")
+    private WebElement productPageProducts;
 
 
     public ItemPage(WebDriver driver) {
