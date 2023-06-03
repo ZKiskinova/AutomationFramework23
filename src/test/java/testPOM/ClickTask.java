@@ -2,7 +2,6 @@ package testPOM;
 
 import base.TestUtil;
 import org.testng.annotations.Test;
-import pages.DocuWarePage;
 import pages.LoginPage;
 
 public class ClickTask extends TestUtil {
