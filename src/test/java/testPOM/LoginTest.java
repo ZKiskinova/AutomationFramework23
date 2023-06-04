@@ -6,10 +6,10 @@ import pages.LoginPage;
 
 public class LoginTest extends TestUtil {
 
-    @Test
-    public void successfulLogin() {
+    @Test(dataProvider = "correctUsers")
+    public void successfulLogin(String username, String password) {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login("st, "secret_sauce");
 
 
     }
