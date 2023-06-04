@@ -1,17 +1,10 @@
 package pages;
 
 
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.DataProvider;
-
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
 
 public class LoginPage extends BasePage {
 
@@ -30,34 +23,18 @@ public class LoginPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void Login(String username, String password) {
+    public ProductPage Login(String username, String password) {
         getUsernameInput.click();
         getUsernameInput.clear();
-        getUsernameInput.sendKeys("username");
+        getUsernameInput.sendKeys(username);
 
         PasswordInput.click();
         PasswordInput.clear();
-        PasswordInput.sendKeys("password");
+        PasswordInput.sendKeys(password);
+
+        loginBtn.click();
+        return new ProductPage(driver);
 
     }
 
-    @DataProvider(name = "correctUsers")
-    public Object[][] readUsersFromCsv() {
-        try {
-            CSVReader csvReader = new CSVReader(new FileReader("src/test/resources/correctUsers.csv"));
-            List<String[]> csvDataCorrectUsers = csvReader.readAll();
-            Object[][] csvDataObj = new Object[csvDataCorrectUsers.size()][2];
-
-            for (int i = 0; i < csvDataCorrectUsers.size(); i++) {
-                csvDataObj[i] = csvDataCorrectUsers.get(i);
-            }
-            return csvDataObj;
-
-        } catch (IOException e) {
-            System.out.println("It is not possible to find file!");
-            return null;
-        } catch (CsvException e) {
-            return null;
-        }
-    }
 }
