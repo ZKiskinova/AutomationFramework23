@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.DataProvider;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -47,12 +46,18 @@ public class LoginPage extends BasePage {
         try {
             CSVReader csvReader = new CSVReader(new FileReader("src/test/resources/correctUsers.csv"));
             List<String[]> csvDataCorrectUsers = csvReader.readAll();
-            Object [] [] csvDataObj = new Object[csvDataCorrectUsers.size()][2];
-        } catch (IOException z) {
+            Object[][] csvDataObj = new Object[csvDataCorrectUsers.size()][2];
+
+            for (int i = 0; i < csvDataCorrectUsers.size(); i++) {
+                csvDataObj[i] = csvDataCorrectUsers.get(i);
+            }
+            return csvDataObj;
+
+        } catch (IOException e) {
             System.out.println("It is not possible to find file!");
             return null;
-        } catch (CsvException z) {
+        } catch (CsvException e) {
             return null;
         }
     }
-
+}
