@@ -34,11 +34,11 @@ public class LoginPage extends BasePage {
     public void Login(String username, String password) {
         getUsernameInput.click();
         getUsernameInput.clear();
-        getUsernameInput.sendKeys(username);
+        getUsernameInput.sendKeys("username");
 
         PasswordInput.click();
         PasswordInput.clear();
-        PasswordInput.sendKeys(password);
+        PasswordInput.sendKeys("password");
 
     }
 
