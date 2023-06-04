@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-public class LoginTestSuccsessful extends TestUtil {
+public class LoginTestSuccessful extends TestUtil {
 
 
     @Test(dataProvider = "correctUsers")
