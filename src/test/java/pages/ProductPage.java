@@ -1,15 +1,25 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class ProductPage extends BasePage {
 
-    @FindBy(id="react-burger-menu-btn")
-    private WebElement menuActions;
+    private final static String PRODUCT_ID = "add-to-cart-sauce-labs-";
+
     public ProductPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void addItemInToCart(String itemName) {
+        WebElement itemToBeAdded = driver.findElement(By.id(PRODUCT_ID + itemName));
+        itemToBeAdded.click();
+
+        WebElement shoppingCartBadge = driver.findElement(By.className("shopping_cart_badge"));
+        Assert.assertEquals(shoppingCartBadge.getText(), "1");
+    }
+
 
     }
-}
