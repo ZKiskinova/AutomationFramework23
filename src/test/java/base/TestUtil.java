@@ -37,7 +37,7 @@ public class TestUtil {
             properties.load(confFile);
             appURL = properties.getProperty("testURL");
             browser = properties.getProperty("browser");
-            implicitWait = Integer.parseInt(properties.getProperty("implicitWat"));
+            implicitWait = Integer.parseInt(properties.getProperty("implicitWait"));
         } catch (IOException e) {
 
             System.out.println("File is not found");
