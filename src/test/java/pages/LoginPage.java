@@ -35,20 +35,6 @@ public class LoginPage extends BasePage {
         PasswordInput.sendKeys(password);
 
         loginBtn.click();
-        return new ProductPage(driver);
-
-    }
-
-    public ProductPage unsuccessfullLogin(String username, String password) {
-        getUsernameInput.click();
-        getUsernameInput.clear();
-        getUsernameInput.sendKeys(username);
-
-        PasswordInput.click();
-        PasswordInput.clear();
-        PasswordInput.sendKeys(password);
-
-        loginBtn.click();
         WebElement errorMessage = driver.findElement(By.xpath("//h3[@data-test='error'"));
         Assert.assertTrue(errorMessage.isDisplayed());
         return null;
