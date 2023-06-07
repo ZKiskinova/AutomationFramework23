@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProductPage;
 
-public class AddProductsTest extends TestUtil {
+public class AddProductsInCartTest extends TestUtil {
 
     @Test
 
@@ -14,8 +14,15 @@ public class AddProductsTest extends TestUtil {
 
         LoginPage loginTest = new LoginPage(driver);
         ProductPage productPage = loginTest.Login("standard_user", "secret_sauce");
+
         productPage.addItemInToCart("bike-light");
         Assert.assertEquals(productPage.getItemInCart(), 1);
+
+        productPage.addItemInToCart("bolt-t-shirt");
+        Assert.assertEquals(productPage.getItemInCart(), 2);
+
+        productPage.clickShoppingCart();
+
 
     }
 }

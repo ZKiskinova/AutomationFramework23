@@ -35,6 +35,12 @@ public class ProductPage extends BasePage {
         return Integer.parseInt(shoppingCartBadge.getText());
     }
 
+    public CheckoutPage clickShoppingCart() {
+        shoppingCart.click();
+        return new CheckoutPage(driver);
+    }
+
+
     }
 
 
