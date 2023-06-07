@@ -11,8 +11,8 @@ public class FinalPage extends BasePage{
     public FinalPage(WebDriver driver) {
         super(driver);
     }
-    public GoodByePage FinishOrder(){
+    public void  FinishOrder(){
         finishBtn.click();
-        return new GoodByePage(driver);
+         new GoodByePage(driver);
     }
 }

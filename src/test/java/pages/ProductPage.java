@@ -16,7 +16,7 @@ public class ProductPage extends BasePage {
     @FindBy(id = "react-burger-menu-btn")
     private WebElement userMenuBtn;
 
-    @FindBy(id= "shopping_cart_container")
+    @FindBy(className = "shopping_cart_link")
     private WebElement shoppingCart;
 
     @FindBy(className = "shopping_cart_badge")
@@ -31,15 +31,16 @@ public class ProductPage extends BasePage {
         WebElement itemToBeAdded = driver.findElement(By.id(PRODUCT_ID + itemName));
         itemToBeAdded.click();
     }
+
     public int getItemInCart() {
         return Integer.parseInt(shoppingCartBadge.getText());
     }
 
-    public CheckoutPage clickShoppingCart() {
+    public void CheckoutPage() {
         shoppingCart.click();
-        return new CheckoutPage(driver);
-    }
+         new CheckoutPage(driver);
 
+}
 
     }
 

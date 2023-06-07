@@ -11,13 +11,14 @@ public class CheckoutPage extends BasePage {
     @FindBy(id = "checkout")
     private WebElement buttonCheckout;
 
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
 
-    public BayerInformationPage ClickOnCheckout(){
+    public void ClickOnCheckout(){
         buttonCheckout.click();
-        return new BayerInformationPage(driver);
+        new BayerInformationPage(driver);
 
     }
 }

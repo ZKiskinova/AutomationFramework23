@@ -21,7 +21,7 @@ public class AddProductsInCartTest extends TestUtil {
         productPage.addItemInToCart("bolt-t-shirt");
         Assert.assertEquals(productPage.getItemInCart(), 2);
 
-        productPage.clickShoppingCart();
+        productPage.CheckoutPage();
 
 
     }

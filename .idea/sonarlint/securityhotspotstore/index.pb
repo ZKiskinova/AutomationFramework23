@@ -76,3 +76,7 @@ w
 G.idea/sonarlint/issuestore/e/4/e4af526f20f94ad04e01a98bebf5ccc65f329750,a\9\a94434000ca582f99d3ff5ad4a0783417f42267b
 Å
 Q.idea/sonarlint/securityhotspotstore/3/0/30f9777ea696a18aa49d3e9967e93a4276065227,7\4\74a0e90fa145d4cf4f2495c6a426d2628d6f6ea6
+P
+ src/test/java/base/TestUtil.java,5\9\59d9ef061498841be504356267b8ae8810e418b8
+R
+"src/test/java/pages/LoginPage.java,2\f\2febc867dad266b12f3cf09596e572e0dcf37dbf
