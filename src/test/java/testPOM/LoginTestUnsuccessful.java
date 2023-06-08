@@ -12,20 +12,20 @@ import java.util.List;
 
 public class LoginTestUnsuccessful extends TestUtil {
 
-    @Test(dataProvider = "uncorrectUsers")
+    @Test(dataProvider = "incorrectUsers")
     public void unsuccessfullLogin(String username, String password) {
 
 
     }
-    @DataProvider(name = "uncorrectUsers")
+    @DataProvider(name = "incorrectUsers")
     public Object[][] readUsersFromCsv() {
         try {
-            CSVReader csvReader = new CSVReader(new FileReader("src/test/resources/uncorrectUsers.csv"));
-            List<String[]> csvDataUncorrectUsers = csvReader.readAll();
-            Object[][] csvDataObj = new Object[csvDataUncorrectUsers.size()][2];
+            CSVReader csvReader = new CSVReader(new FileReader("src/test/resources/incorrectUsers.csv"));
+            List<String[]> csvDataIncorrectUsers = csvReader.readAll();
+            Object[][] csvDataObj = new Object[csvDataIncorrectUsers.size()][2];
 
-            for (int i = 0; i < csvDataUncorrectUsers.size(); i++) {
-                csvDataObj[i] = csvDataUncorrectUsers.get(i);
+            for (int i = 0; i < csvDataIncorrectUsers.size(); i++) {
+                csvDataObj[i] = csvDataIncorrectUsers.get(i);
             }
             return csvDataObj;
 

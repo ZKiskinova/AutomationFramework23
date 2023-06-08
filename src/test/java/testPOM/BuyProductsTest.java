@@ -8,9 +8,9 @@ import pages.*;
 
 public class BuyProductsTest extends TestUtil {
 
-    @Test(expectedExceptions = NullPointerException.class)
+    @Test
     public void ClickOnCheckout(){
-        CheckoutPage checkoutPage = new CheckoutPage(driver);
+
         LoginPage loginTest = new LoginPage(driver);
         ProductPage productPage = loginTest.Login("standard_user", "secret_sauce");
 
@@ -23,6 +23,7 @@ public class BuyProductsTest extends TestUtil {
 
         productPage.CheckoutPage();
 
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.ClickOnCheckout();
 
 
@@ -30,5 +31,6 @@ public class BuyProductsTest extends TestUtil {
         FinalPage finalPage = bayerInformationPage.FillUp("Zlatina","Koleva","8000");
 
         finalPage.FinishOrder();
+
     }
 }
